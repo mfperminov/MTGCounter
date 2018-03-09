@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MTG counter</string>
+    <string name="reset">Reset</string>
+    <string name="dice_roll">Dice roll</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="initial_life">20</string>
+    <string name="initial_poison">0</string>
+    <string name="plus1">+1</string>
+    <string name="plus5">+5</string>
+    <string name="dice_side">Dice side 5</string>
+    <string name="players_lose"> All players lose</string>
+    <string name="player1_lose">Player 1 is about to lose&#8230;</string>
+    <string name="player2_lose">Player 2 is about to lose&#8230;</string>
 </resources>

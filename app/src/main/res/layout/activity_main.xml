@@ -3,39 +3,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     android:orientation="horizontal"
     tools:context="com.example.android.mtgcounter.MainActivity">
+
     <Button
         android:id="@+id/reset_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reset"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:layout_centerHorizontal="true"
-        android:onClick="resetAll"/>
+        android:onClick="resetAll"
+        android:text="@string/reset" />
 
     <Button
         android:id="@+id/dice_roll_but"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Dice roll"
-        android:layout_marginBottom="8dp"
+        android:layout_alignStart="@id/reset_button"
         android:layout_below="@id/reset_button"
-        android:layout_alignLeft="@id/reset_button"
-        android:onClick="diceRoll"/>
+        android:layout_marginBottom="8dp"
+        android:onClick="diceRoll"
+        android:text="@string/dice_roll" />
 
     <ImageView
         android:id="@+id/image_dice"
         android:layout_width="40dp"
         android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/dice_roll_but"
-        android:src="@drawable/dice5"/>
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/dice_side"
+        android:src="@drawable/dice5" />
+
+    <TextView
+        android:id="@+id/loser_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/image_dice"
+        android:layout_centerHorizontal="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:baselineAligned="false"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -51,7 +65,7 @@
                 android:layout_weight="0.5"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:text="Player 1"
+                android:text="@string/player1"
                 android:textColor="#616161"
                 android:textSize="14sp" />
 
@@ -64,8 +78,8 @@
                 android:focusable="true"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:onClick="minusPlayer1"
-                android:text="20"
+                android:onClick="minusOneLifePointPlayer1"
+                android:text="@string/initial_life"
                 android:textColor="#000000"
                 android:textSize="100sp" />
 
@@ -75,6 +89,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="2"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -90,14 +105,15 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/red_cross"
-                        android:onClick="plus1Player1" />
+                        android:onClick="plusOneLifePointPlayer1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/player1_plus1_but"
                         android:layout_centerHorizontal="true"
-                        android:text="+1" />
+                        android:text="@string/plus1"
+                        android:textColor="#FFFFFF" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -107,21 +123,21 @@
                     android:gravity="center">
 
                     <Button
-
                         android:id="@+id/player1_plus5_but"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/red_cross"
-                        android:onClick="plus5Player1" />
+                        android:onClick="plusFiveLifePointsPlayer1" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/player1_plus5_but"
                         android:layout_centerHorizontal="true"
-                        android:text="+5" />
+                        android:text="@string/plus5"
+                        android:textColor="#FFFFFF" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -138,7 +154,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/poison"
-                        android:onClick="addPcounterPlayer1" />
+                        android:onClick="addPoisonCounterPlayer1" />
 
                     <TextView
                         android:id="@+id/poison_view_player1"
@@ -146,7 +162,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/player1_poison_but"
                         android:layout_centerHorizontal="true"
-                        android:text="0"
+                        android:text="@string/initial_poison"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </RelativeLayout>
@@ -166,7 +182,7 @@
                 android:layout_weight="0.5"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:text="Player 2"
+                android:text="@string/player2"
                 android:textColor="#616161"
                 android:textSize="14sp" />
 
@@ -179,8 +195,8 @@
                 android:focusable="true"
                 android:fontFamily="sans-serif"
                 android:gravity="center"
-                android:onClick="minusPlayer2"
-                android:text="20"
+                android:onClick="minusOneLifePointPlayer2"
+                android:text="@string/initial_life"
                 android:textColor="#000000"
                 android:textSize="100sp" />
 
@@ -190,6 +206,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginBottom="16dp"
                 android:layout_weight="2"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -205,7 +222,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/poison"
-                        android:onClick="addPcounterPlayer2" />
+                        android:onClick="addPoisonCounterPlayer2" />
 
                     <TextView
                         android:id="@+id/poison_view_player2"
@@ -213,7 +230,7 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/player2_poison_but"
                         android:layout_centerHorizontal="true"
-                        android:text="0"
+                        android:text="@string/initial_poison"
                         android:textColor="#000000"
                         android:textSize="18sp" />
                 </RelativeLayout>
@@ -232,14 +249,15 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/red_cross"
-                        android:onClick="plus5Player2" />
+                        android:onClick="plusFiveLifePointsPlayer2" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/player2_plus5_but"
                         android:layout_centerHorizontal="true"
-                        android:text="+5" />
+                        android:text="@string/plus5"
+                        android:textColor="#FFFFFF" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -256,14 +274,15 @@
                         android:layout_centerHorizontal="true"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/red_cross"
-                        android:onClick="plus1Player2" />
+                        android:onClick="plusOneLifePointPlayer2" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/player2_plus1_but"
                         android:layout_centerHorizontal="true"
-                        android:text="+1" />
+                        android:text="@string/plus1"
+                        android:textColor="#FFFFFF" />
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
