@@ -14,43 +14,47 @@ public class MainActivity extends AppCompatActivity {
     int scorePlayer2 = 20;
     int poison1 = 0;
     int poison2 = 0;
+    TextView scoreViewLifePlayer1;
+    TextView scoreViewLifePlayer2;
+    TextView scoreViewPoisonPlayer1;
+    TextView scoreViewPoisonPlayer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        scoreViewLifePlayer1 = findViewById(R.id.player1_score);
+        scoreViewLifePlayer2 = findViewById(R.id.player2_score);
+        scoreViewPoisonPlayer1 = findViewById(R.id.poison_view_player1);
+        scoreViewPoisonPlayer2 = findViewById(R.id.poison_view_player2);
     }
 
     /**
      * Displays life points for Player 1.
      */
     public void displayForPlayer1(int score) {
-        TextView scoreView = findViewById(R.id.player1_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewLifePlayer1.setText(String.valueOf(score));
     }
 
     /**
      * Displays life points for Player2.
      */
     public void displayForPlayer2(int score) {
-        TextView scoreView = findViewById(R.id.player2_score);
-        scoreView.setText(String.valueOf(score));
+        scoreViewLifePlayer2.setText(String.valueOf(score));
     }
 
     /**
      * Displays poison counter for Player 1.
      */
     public void displayPoisonForPlayer1(int score) {
-        TextView scoreView = findViewById(R.id.poison_view_player1);
-        scoreView.setText(String.valueOf(score));
+        scoreViewPoisonPlayer1.setText(String.valueOf(score));
     }
 
     /**
      * Displays poison counters for Player2.
      */
     public void displayPoisonForPlayer2(int score) {
-        TextView scoreView = findViewById(R.id.poison_view_player2);
-        scoreView.setText(String.valueOf(score));
+        scoreViewPoisonPlayer2.setText(String.valueOf(score));
     }
 
     /**

@@ -147,7 +147,6 @@
                     android:gravity="center">
 
                     <Button
-
                         android:id="@+id/player1_poison_but"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
@@ -242,7 +241,6 @@
                     android:gravity="center">
 
                     <Button
-
                         android:id="@+id/player2_plus5_but"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
@@ -267,7 +265,6 @@
                     android:gravity="center">
 
                     <Button
-
                         android:id="@+id/player2_plus1_but"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
